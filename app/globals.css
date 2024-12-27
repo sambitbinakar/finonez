@@ -70,3 +70,33 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+@layer utilities{
+  .gradient{
+    @apply bg-gradient-to-br from-[#024fd5] to-[#f69642]
+  }
+  .gradient-title{
+    @apply gradient font-extrabold tracking-tighter pr-2 pb-2 text-transparent bg-clip-text ;
+  }
+  .gradient_a{
+    @apply  bg-gradient-to-r from-[#024fd5] via-[#b754fa] to-[#f69642] animate-gradient
+  }
+}
+.animate-gradient {
+  background-size: 300%;
+  -webkit-animation: animatedgradient 6s ease infinite alternate;
+  -moz-animation: animatedgradient 6s ease infinite alternate;
+  animation: animatedgradient 6s ease infinite alternate;
+}
+
+@keyframes animatedgradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
