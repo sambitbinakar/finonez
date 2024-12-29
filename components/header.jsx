@@ -4,8 +4,12 @@ import Link from "next/link";
 import React from "react";
 import { Button } from "./ui/button";
 import { LayoutDashboard, Moon, PenBox, Sun } from "lucide-react";
+import { checkUser } from "@/lib/checkUser";
 
-function Header() {
+const Header= async ()=> {
+
+  await checkUser();
+  
   return (
     <div className="fixed top-0 w-full backdrop-filter backdrop-blur-sm bg-opacity-50 z-50 border-b px-3">
       <nav className=" container mx-auto px-6 py-3 flex items-center justify-between">
@@ -33,7 +37,7 @@ function Header() {
             <Link href={"./transaction/create"}>
               <Button className="flex items-center">
                 <PenBox size={18} />
-                <span className="hidden md:inline">Dashboard</span>
+                <span className="hidden md:inline">Add transaction</span>
               </Button>
             </Link>
           </SignedIn>
